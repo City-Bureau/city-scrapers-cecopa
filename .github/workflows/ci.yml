@@ -42,7 +42,7 @@ jobs:
             pip-
 
       - name: Install dependencies
-        run: pipenv sync --dev
+        run: pipenv --python ${{ env.PYTHON_VERSION }} sync
         env:
           PIPENV_DEFAULT_PYTHON_VERSION: ${{ matrix.python-version }}
 
