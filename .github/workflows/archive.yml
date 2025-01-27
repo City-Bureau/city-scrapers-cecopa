@@ -10,7 +10,7 @@ on:
 
 env:
   CI: true
-  PYTHON_VERSION: 3.11
+  PYTHON_VERSION: 3.9
   PIPENV_VENV_IN_PROJECT: true
   SCRAPY_SETTINGS_MODULE: city_scrapers.settings.archive
   AUTOTHROTTLE_MAX_DELAY: 30.0
@@ -43,7 +43,7 @@ jobs:
             pip-
 
       - name: Install dependencies
-        run: pipenv --python ${{ env.PYTHON_VERSION }} sync
+        run: pipenv sync
         env:
           PIPENV_DEFAULT_PYTHON_VERSION: ${{ env.PYTHON_VERSION }}
 
